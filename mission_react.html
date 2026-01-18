@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 6: React State Hook | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the React Mission Page */
+        .mission-header {
+            background-color: #61dbfb30; /* React color tint */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #61dbfb;
+            margin-bottom: 2rem;
+        }
+        .mission-header h1 {
+            font-family: 'Orbitron';
+            color: #61dbfb;
+            margin-bottom: 0.5rem;
+        }
+        .challenge-box {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, border 0.2s;
+            border: 1px solid transparent;
+        }
+        .option-item:hover {
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid var(--primary);
+        }
+        .option-item input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary);
+            transform: scale(1.2);
+        }
+        .code-snippet {
+            background: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            color: #61dbfb; /* React highlight color */
+        }
+        .btn-submit {
+            background: var(--primary);
+            border: none;
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron';
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> Code<span>Quest</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <div class="mission-header">
+        <p style="color: #61dbfb;">MERN Fullstack</p>
+        <h1>Mission 6: State Hook Synthesis</h1>
+        <p style="color: var(--text-muted);">Goal: Choose the correct hook to manage component state in a modern React application. (Reward: +25 XP)</p>
+    </div>
+
+    <main class="container">
+        
+        <div class="challenge-box">
+            <p class="question-text">1. Which React Hook is used to add state management capabilities to functional components?</p>
+
+            <div class="code-snippet">
+                import React, { ***HOOK_NAME*** } from 'react'; <br>
+                function Counter() { <br>
+                &nbsp;&nbsp; const [count, setCount] = ***HOOK_NAME***(0); <br>
+                &nbsp;&nbsp; return &lt;button onClick={() => setCount(count + 1)}&gt;{count}&lt;/button&gt;; <br>
+                }
+            </div>
+
+            <form id="quiz-form">
+                <label class="option-item">
+                    <input type="radio" name="q1" value="A">
+                    `useEffect`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="B">
+                    `useState`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="C">
+                    `useContext`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="D">
+                    `useReducer`
+                </label>
+            </form>
+            
+            <div style="text-align: right; margin-top: 2rem;">
+                <button class="btn-submit" id="submit-quiz">Submit Answer</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const form = document.getElementById('quiz-form');
+            const selected = form.elements['q1'].value;
+            
+            if (selected === 'B') {
+                alert('COMPONENT STABLE! +25 XP earned. useState is the primary hook for managing state in functional components.');
+                window.location.href = 'index.html';
+            } else if (selected) {
+                alert('STATE FAILURE. The component is not updating. Check your Hook knowledge.');
+            } else {
+                alert('Select a hook to proceed.');
+            }
+        });
+    </script>
+</body>
+</html>

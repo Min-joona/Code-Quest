@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 2: CSS Flexbox Challenge | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the CSS Mission Page */
+        .mission-header {
+            background-color: #264de430; /* CSS color tint */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #264de4;
+            margin-bottom: 2rem;
+        }
+        .mission-header h1 {
+            font-family: 'Orbitron';
+            color: #264de4;
+            margin-bottom: 0.5rem;
+        }
+        .challenge-box {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, border 0.2s;
+            border: 1px solid transparent;
+        }
+        .option-item:hover {
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid var(--primary);
+        }
+        .option-item input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary);
+            transform: scale(1.2);
+        }
+        .code-snippet {
+            background: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            color: #264de4; /* CSS highlight color */
+        }
+        .btn-submit {
+            background: var(--primary);
+            border: none;
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron';
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+        }
+
+        /* Visualization Box for Flexbox Challenge */
+        .flex-container-viz {
+            display: flex;
+            border: 2px dashed #264de4;
+            background: rgba(255, 255, 255, 0.05);
+            height: 150px;
+            align-items: center; /* This is the key state */
+            justify-content: space-between; /* This is the key state */
+            margin-bottom: 2rem;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .flex-item-viz {
+            background: var(--primary);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 0 5px var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i> Code<span>Quest</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <div class="mission-header">
+        <p style="color: #264de4;">CSS3 Styling</p>
+        <h1>Mission 2: Flexbox Alignment</h1>
+        <p style="color: var(--text-muted);">Goal: Use Flexbox properties to align items both horizontally and vertically. (Reward: +15 XP)</p>
+    </div>
+
+    <main class="container">
+        
+        <div class="challenge-box">
+            <p class="question-text">1. You have a flex container with three items. You need to achieve the following layout, where items are spaced evenly across the container and centered vertically.</p>
+
+            <div class="flex-container-viz">
+                <div class="flex-item-viz">1</div>
+                <div class="flex-item-viz">2</div>
+                <div class="flex-item-viz">3</div>
+            </div>
+            
+
+            <div class="code-snippet">
+                .container { <br>
+                &nbsp;&nbsp; display: flex; <br>
+                &nbsp;&nbsp; /* INSERT CODE HERE */ <br>
+                }
+            </div>
+
+            <form id="quiz-form">
+                <label class="option-item">
+                    <input type="radio" name="q1" value="A">
+                    justify-content: center; align-items: center;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="B">
+                    justify-content: space-around; align-items: flex-start;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="C">
+                    justify-content: space-between; align-items: center;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="D">
+                    justify-content: flex-end; align-items: stretch;
+                </label>
+            </form>
+            
+            <div style="text-align: right; margin-top: 2rem;">
+                <button class="btn-submit" id="submit-quiz">Submit Answer</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const form = document.getElementById('quiz-form');
+            const selected = form.elements['q1'].value;
+            
+            if (selected === 'C') {
+                alert('CHALLENGE COMPLETE! +15 XP earned. You mastered the main and cross axis alignment.');
+                // Simulate progress update
+                window.location.href = 'index.html';
+            } else if (selected) {
+                alert('MISSION FAILED. Review Flexbox properties and try again.');
+            } else {
+                alert('Please select an option before submitting.');
+            }
+        });
+    </script>
+
+</body>
+</html>

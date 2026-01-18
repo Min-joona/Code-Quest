@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest | Master the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-gamepad"></i> Code<span>Quest</span>
+        </div>
+        <div class="user-stats">
+            <div class="stat-item" title="Total Points">
+                <i class="fa-solid fa-bolt"></i> <span id="points-display">160</span> XP
+            </div>
+            <div class="stat-item" title="Current Level">
+                <i class="fa-solid fa-layer-group"></i> Lvl <span id="level-display">2</span>
+            </div>
+            <div class="stat-item streak" title="Day Streak">
+                <i class="fa-solid fa-fire"></i> <span id="streak-display">11</span>
+            </div>
+            <div class="profile-icon">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Amar" alt="User">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <h1>Master Programming Through <span class="highlight">Interactive Games</span></h1>
+            <p>Complete challenges, earn XP, and climb the leaderboard.</p>
+        </header>
+
+        <section class="container">
+            <h2 class="section-title">Your Missions</h2>
+            <div class="grid-container">
+                
+                <div class="card tech-card" data-tech="html">
+                    <div class="icon-box html-icon">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3>HTML5 Structure</h3>
+                    <p>Build the skeleton of the web. Solve markup puzzles.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 45%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>45/100 XP</span>
+                        <button class="btn-start" onclick="window.location.href='mission_html.html'">Resume</button>
+                    </div>
+                </div>
+
+                <div class="card tech-card" data-tech="css">
+                    <div class="icon-box css-icon">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3 Styling</h3>
+                    <p>Master design, flexbox, and animations.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 25%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>25/100 XP</span>
+                        <button class="btn-start" onclick="window.location.href='mission_css.html'">Resume</button>
+                    </div>
+                </div>
+
+                <div class="card tech-card" data-tech="js">
+                    <div class="icon-box js-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3>JavaScript Logic</h3>
+                    <p>Create dynamic interactions and game logic.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>0/100 XP</span>
+                        <button class="btn-start" onclick="window.location.href='mission_js.html'">Start</button>
+                    </div>
+                </div>
+
+                <div class="card tech-card" data-tech="python">
+                    <div class="icon-box python-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python Basics</h3>
+                    <p>Data science, automation, and backend logic.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 45%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>45/100 XP</span>
+                        <button class="btn-start" onclick="window.location.href='mission_python.html'">Resume</button>
+                    </div>
+                </div>
+
+                <div class="card tech-card" data-tech="php">
+                    <div class="icon-box php-icon">
+                        <i class="fa-brands fa-php"></i>
+                    </div>
+                    <h3>PHP Backend</h3>
+                    <p>Server-side scripting and database management.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 10%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>10/100 XP</span>
+                        <button class="btn-start">Resume</button>
+                    </div>
+                </div>
+
+                <div class="card tech-card" data-tech="react">
+                    <div class="icon-box react-icon">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <h3>MERN Fullstack</h3>
+                    <p>MongoDB, Express, React, Node masterclass.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>0/100 XP</span>
+                        <button class="btn-start" onclick="window.location.href='mission_react.html'">Start</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container leaderboard-section">
+            <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Top Players</h2>
+            <div class="leaderboard-card">
+                <div class="rank-row top-rank">
+                    <div class="rank-num">1</div>
+                    <div class="player-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=CodeMaster" alt="p1">
+                        <span>CodeMaster</span>
+                    </div>
+                    <div class="rank-score">950 XP</div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">2</div>
+                    <div class="player-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ProDev" alt="p2">
+                        <span>ProgrammingPro</span>
+                    </div>
+                    <div class="rank-score">720 XP</div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">3</div>
+                    <div class="player-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=WebWiz" alt="p3">
+                        <span>WebWizard</span>
+                    </div>
+                    <div class="rank-score">650 XP</div>
+                </div>
+                <div class="rank-row current-user">
+                    <div class="rank-num">14</div>
+                    <div class="player-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Amar" alt="You">
+                        <span>You</span>
+                    </div>
+                    <div class="rank-score">160 XP</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 4: Python Variables | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the Python Mission Page */
+        .mission-header {
+            background-color: #3776ab30; /* Python color tint */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #3776ab;
+            margin-bottom: 2rem;
+        }
+        .mission-header h1 {
+            font-family: 'Orbitron';
+            color: #3776ab;
+            margin-bottom: 0.5rem;
+        }
+        .challenge-box {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, border 0.2s;
+            border: 1px solid transparent;
+        }
+        .option-item:hover {
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid var(--primary);
+        }
+        .option-item input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary);
+            transform: scale(1.2);
+        }
+        .code-snippet {
+            background: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            color: #3776ab; /* Python highlight color */
+        }
+        .btn-submit {
+            background: var(--primary);
+            border: none;
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron';
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> Code<span>Quest</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <div class="mission-header">
+        <p style="color: #3776ab;">Python Basics</p>
+        <h1>Mission 4: Snake Syntax</h1>
+        <p style="color: var(--text-muted);">Goal: Identify the correct and standard way to declare a constant variable in Python. (Reward: +10 XP)</p>
+    </div>
+
+    <main class="container">
+        
+        <div class="challenge-box">
+            <p class="question-text">1. In Python, which of the following is the **convention** for defining a variable intended to be a constant (i.e., should not be changed)?</p>
+
+            <div class="code-snippet">
+                # Which is the best practice? <br>
+                VALUE = 100 <br>
+                value = 100 <br>
+                const value = 100
+            </div>
+
+            <form id="quiz-form">
+                <label class="option-item">
+                    <input type="radio" name="q1" value="A">
+                    `const MAX_VALUE = 100`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="B">
+                    `max_value = 100`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="C">
+                    `MAX_VALUE = 100`
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="D">
+                    `var MAX_VALUE = 100`
+                </label>
+            </form>
+            
+            <div style="text-align: right; margin-top: 2rem;">
+                <button class="btn-submit" id="submit-quiz">Submit Answer</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const form = document.getElementById('quiz-form');
+            const selected = form.elements['q1'].value;
+            
+            if (selected === 'C') {
+                alert('DATA SECURED! +10 XP earned. Python constants are conventionally written in ALL_CAPS.');
+                window.location.href = 'index.html';
+            } else if (selected) {
+                alert('SYNTAX ERROR. Check your PEP 8 guide for Python naming conventions.');
+            } else {
+                alert('Select an option before proceeding.');
+            }
+        });
+    </script>
+</body>
+</html>

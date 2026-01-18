@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i> Code<span>Quest</span></a>
+        <div class="nav-links">
+            <a href="index.html">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profile.html" class="active">Profile</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" style="width: 100px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 1rem;">
+            <h2 style="font-family: 'Orbitron';">Player One</h2>
+            <p style="color: var(--text-muted);">Junior Developer</p>
+            
+            <div style="display: flex; justify-content: space-around; margin-top: 2rem; border-top: 1px solid var(--glass-border); padding-top: 1rem;">
+                <div>
+                    <h3 style="color: var(--accent-cyan);">160</h3>
+                    <p style="font-size: 0.8rem;">Total XP</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary);">2</h3>
+                    <p style="font-size: 0.8rem;">Level</p>
+                </div>
+                <div>
+                    <h3 style="color: orange;">11</h3>
+                    <p style="font-size: 0.8rem;">Day Streak</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: left;">
+                <h4 style="margin-bottom: 1rem;">Recent Achievements</h4>
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+                    <i class="fa-solid fa-medal" style="color: gold;"></i> <strong>First Code</strong> - Wrote your first HTML line
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                    <i class="fa-solid fa-bug" style="color: red;"></i> <strong>Bug Squasher</strong> - Fixed 5 syntax errors
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

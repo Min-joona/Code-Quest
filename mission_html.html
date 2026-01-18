@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 1: HTML Tag Basics | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the Mission Page */
+        .mission-header {
+            background-color: #e34c2630; /* HTML color tint */
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #e34c26;
+            margin-bottom: 2rem;
+        }
+        .mission-header h1 {
+            font-family: 'Orbitron';
+            color: #e34c26;
+            margin-bottom: 0.5rem;
+        }
+        .challenge-box {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, border 0.2s;
+            border: 1px solid transparent;
+        }
+        .option-item:hover {
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid var(--primary);
+        }
+        .option-item input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary);
+            transform: scale(1.2);
+        }
+        .code-snippet {
+            background: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            color: #f7df1e; /* JS/Code highlight color */
+        }
+        .btn-submit {
+            background: var(--primary);
+            border: none;
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron';
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i> Code<span>Quest</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Missions</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <div class="mission-header">
+        <p style="color: #e34c26;">HTML5 Structure</p>
+        <h1>Mission 1: The Document Skeleton</h1>
+        <p style="color: var(--text-muted);">Goal: Correctly identify the semantic purpose of key HTML tags. (Reward: +10 XP)</p>
+    </div>
+
+    <main class="container">
+        
+        <div class="challenge-box">
+            <p class="question-text">1. Which tag is correctly used to define the **primary, unique content** of a page, excluding navigation, sidebars, and footers?</p>
+
+            <div class="code-snippet">
+                &lt;body&gt; ... &lt;/body&gt; <br>
+                &lt;div id="main-content"&gt; ... &lt;/div&gt; <br>
+                &lt;main&gt; ... &lt;/main&gt;
+            </div>
+
+            <form id="quiz-form">
+                <label class="option-item">
+                    <input type="radio" name="q1" value="A">
+                    &lt;article&gt;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="B">
+                    &lt;section&gt;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="C">
+                    &lt;main&gt;
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="q1" value="D">
+                    &lt;div&gt;
+                </label>
+            </form>
+            
+            <div style="text-align: right; margin-top: 2rem;">
+                <button class="btn-submit" id="submit-quiz">Submit Answer</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        // Update the 'Resume' button in index.html to link to this page
+        // You would do this by changing the index.html button's action:
+        // <button class="btn-start" onclick="window.location.href='mission_html.html'">Resume</button>
+
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const form = document.getElementById('quiz-form');
+            const selected = form.elements['q1'].value;
+            
+            if (selected === 'C') {
+                alert('SUCCESS! +10 XP earned. The <main> tag is the correct semantic element for primary content.');
+                // In a real app, this would update the user's score in a database
+                window.location.href = 'index.html'; // Go back to missions page
+            } else if (selected) {
+                alert('INCORRECT. Try again to save the mission.');
+            } else {
+                alert('Please select an option.');
+            }
+        });
+    </script>
+
+</body>
+</html>
